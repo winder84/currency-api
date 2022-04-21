@@ -6,7 +6,7 @@ import (
 )
 
 type V1CurrencyResponse struct {
-	Currencies []Currency `json:"pairs"`
+	Currencies []Currency `json:"currencies"`
 }
 
 type Currency struct {
