@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  currency_db:
+    container_name: currency_container
+    image: postgres
+    restart: always
+    ports:
+      - "5499:5432"
+    environment:
+      POSTGRES_PASSWORD: 123
+      POSTGRES_USER: 123
+      POSTGRES_DB: cur
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+#  migrate:
+#    image: migrate/migrate
+#    networks:
+#      - new
+#    command: ["-path", "/migrations", "-database",  "postgres://123:123@localhost:5499/cur?sslmode=disable", "up"]
+#    links:
+#      - db
+networks:
+  new:

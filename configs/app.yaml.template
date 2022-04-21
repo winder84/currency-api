@@ -1,0 +1,9 @@
+app:
+  port: 9999
+db:
+  source: test://user:password@host:port/database?sslmode=disable
+api:
+  url: https://example.org/api/latest.json?app_id=
+  app_id: your_openexchangerates_app_id
+  process:
+    ticker: 5
